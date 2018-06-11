@@ -1,0 +1,1 @@
+Simple blog written by node.js
