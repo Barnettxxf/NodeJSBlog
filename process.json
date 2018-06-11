@@ -1,0 +1,28 @@
+{
+	"name": "myblog",
+	"script": "index.js",
+	"cwd": "./",
+	"watch": [
+		"models",
+		"routes",
+		"views",
+		"lib",
+		"config"
+	],
+	"ignore_watch": [
+		"node_modules",
+		"logs",
+		"public"
+	],
+	"error_file": "./logs/error.log",
+	"out_file": "./logs/out.log",
+	"env":{
+		"NODE_ENV": "product"
+	},
+	"env_dev": {
+		"NODE_ENV": "development"
+	},
+	"env_test": {
+		"NODE_ENV": "test"
+	}
+}

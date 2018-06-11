@@ -1,0 +1,40 @@
+对应文件夹作用：
+    models: 存放操作数据库的文件
+    public: 存放静态文件，如样式、图片等
+    routes: 存放路由文件
+    views: 存放模板文件
+    index.js: 程序主文件
+    package.json: 存储项目名、描述、作者、依赖等等信息
+	.eslintrc.js: ESLint生成的配置文件。ESLint 是一个代码规范和语法错误检查工具。使用 ESLint 可以规范我们的代码书写，可以在编写代码期间就能发现一些低级错误。
+	.editorconfig: EditorConfig插件所使用的配置文件。EditorConfig 是一个保持缩进风格的一致的工具
+
+对应模块的用处：
+    express: web 框架
+    express-session: session 中间件
+    connect-mongo: 将 session 存储于 mongodb，结合 express-session 使用
+    connect-flash: 页面通知的中间件，基于 session 实现
+    ejs: 模板
+    express-formidable: 接收表单及文件上传的中间件
+    config-lite: 读取配置文件
+    marked: markdown 解析
+    moment: 时间格式化
+    mongolass: mongodb 驱动
+    objectid-to-timestamp: 根据 ObjectId 生成时间戳
+    sha1: sha1 加密，用于密码加密
+    winston: 日志
+    express-winston: express 的 winston 日志中间件
+
+pm2使用tips
+	pm2 start ./process.json --env dev //这个命令可以选中配置文件中的env所指定的配置环境
+	pm2 start ./index.js -e path //这个命令可以指定错误日志输出文件
+pm2-windows-service
+	这是个pm2的扩展包，可以为windows创建服务
+	pm2-service-install -n service_name 安装服务
+	pm2-service-uninstall service_name 卸载服务
+
+	安装服务后需要开启对应的服务,并保存服务列表
+	pm2 start ./process  开启某个服务
+	pm2 l  // 查看此时的开启服务列表
+	pm2 save // 保存服务列表*特别关键*
+
+	重启电脑后，如果要使用pm2命令，需要已管理员身份打开cmd才可以执行，不然会报错
